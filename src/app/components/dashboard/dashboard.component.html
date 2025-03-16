@@ -1,1 +1,37 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+  <h2>Dashboard</h2>
+  <div class="stats-container">
+    <div class="stat-card">
+      <mat-icon>check_circle</mat-icon>
+      <h3>Tasks Completed</h3>
+      <p>{{ completedTasksCount }} / {{ tasks.length }}</p>
+    </div>
+  </div>
+  <div class="task-list">
+    <h3>Your Tasks</h3>
+    <div *ngFor="let task of tasks" class="task-item">
+      <mat-icon>task</mat-icon>
+      <div class="task-details">
+        <h4>{{ task.title }}</h4>
+        <p>Due: {{ task.dueDate }} | Priority: {{ task.priority }}</p>
+        <p>Assigned To: {{ task.assignedTo }}</p>
+      </div>
+      <button mat-icon-button color="warn" (click)="deleteTask(task.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="user-list">
+    <h3>All Users</h3>
+    <div *ngFor="let user of users" class="user-item">
+      <mat-icon>person</mat-icon>
+      <div class="user-details">
+        <h4>{{ user.name }}</h4>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Bio: {{ user.bio }}</p>
+        <p>Address: {{ user.address }}</p>
+      </div>
+    </div>
+  </div>
+</div>

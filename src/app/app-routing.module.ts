@@ -6,13 +6,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AccountSettingsComponent } from './components/settings/account-settings/account-settings.component';
 import { PrivacySettingsComponent } from './components/settings/privacy-settings/privacy-settings.component';
-
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'add-user', component: AddUserComponent },
     {
       path: 'settings',
       component: SettingsComponent,
@@ -21,6 +22,7 @@ const routes: Routes = [
         { path: 'privacy', component: PrivacySettingsComponent },
       ],
     },
+    { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

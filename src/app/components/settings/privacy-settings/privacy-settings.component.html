@@ -1,1 +1,19 @@
-<p>privacy-settings works!</p>
+<div class="privacy-settings">
+  <h3>Privacy Settings</h3>
+  <form [formGroup]="privacyForm" (ngSubmit)="savePrivacySettings()">
+    <mat-form-field>
+      <mat-select placeholder="Share My Data" formControlName="shareData">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Receive Marketing Emails" formControlName="marketingEmails">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+        <mat-option value="later">Later</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</div>

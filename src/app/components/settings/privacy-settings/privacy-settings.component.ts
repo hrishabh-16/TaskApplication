@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-privacy-settings',
@@ -7,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './privacy-settings.component.css'
 })
 export class PrivacySettingsComponent {
+  privacyForm: FormGroup;
 
+  constructor(private fb: FormBuilder) {
+    this.privacyForm = this.fb.group({
+      shareData: [''],
+      marketingEmails: [''],
+    });
+  }
+
+  savePrivacySettings(): void {
+    console.log(this.privacyForm.value);
+  }
 }

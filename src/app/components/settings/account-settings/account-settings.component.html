@@ -1,1 +1,15 @@
-<p>account-settings works!</p>
+<div class="account-settings">
+  <h3>Account Settings</h3>
+  <form [formGroup]="accountForm" (ngSubmit)="saveAccountSettings()">
+    <mat-form-field>
+      <input matInput placeholder="Current Password" formControlName="currentPassword" type="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="New Password" formControlName="newPassword" type="password" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </form>
+</div>
